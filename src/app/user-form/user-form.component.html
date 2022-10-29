@@ -1,0 +1,127 @@
+<h2 class="text-center m-3">Enter the information Below</h2>
+<div class="container">
+  <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mb-3">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="firstname">FIRST NAME</label>
+        <input
+          matInput
+          formControlName="firstname"
+          type="text"
+          class="form-control"
+          id="firstname"
+          placeholder=" "
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="lastname">LAST NAME</label>
+        <input
+          matInput
+          formControlName="lastname"
+          type="text"
+          class="form-control"
+          id="lastname"
+          placeholder=" "
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="email">E-MAIL</label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder=" "
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="contact">CONTACT NUMBER</label>
+        <input
+          matInput
+          formControlName="contactNumber"
+          type="text"
+          class="form-control"
+          id="lastName"
+          placeholder=" "
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="company">COMPANY</label>
+      <input
+        matInput
+        formControlName="company"
+        type="text"
+        class="form-control"
+        id="company"
+        placeholder=""
+      />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="interest">INTERESTED IN</label>
+        <select
+          matInput
+          formControlName="interestedIn"
+          id="interest"
+          class="form-control"
+        >
+          <option selected>Interested in</option>
+          <option>Sr.Developer</option>
+          <option>Full Stack Developer</option>
+          <option>AngularJS Developer</option>
+          <option>NodeJS Developer</option>
+          <option>ReactJS Developer</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="budget">BUDGET</label>
+        <select
+          matInput
+          formControlName="budget"
+          id="budget"
+          class="form-control"
+          placeholder="budget"
+        >
+          <option selected>Budget</option>
+          <option>10k-30k</option>
+          <option>30k-60k</option>
+          <option>60k-90k</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12">
+        <label for="technologies"></label>
+        <ng-multiselect-dropdown
+          matInput
+          formControlName="technologies"
+          [settings]="dropdownSettings"
+          [data]="dropdownList"
+        >
+        </ng-multiselect-dropdown>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="selectFile">SELECT FILE</label>
+      <input type="file" class="form-control-file" id="selectFile" />
+    </div>
+    <div class="form-group">
+      <label for="description">ABOUT PROJECT</label>
+      <textarea
+        matInput
+        formControlName="description"
+        class="form-control"
+        id="project"
+        rows="6"
+      ></textarea>
+    </div>
+    <button type="text" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-secondary ml-3">Cancel</button>
+  </form>
+</div>
